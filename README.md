@@ -5,7 +5,7 @@ a React Native component for easy integration of button-based multi-select funct
 ## Installation
 
 ```sh
-npm install react-native-button-multiselect
+yarn add react-native-button-multiselect
 ```
 
 ## Usage

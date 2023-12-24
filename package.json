@@ -156,5 +156,9 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "@testing-library/react-native": "^12.4.2",
+    "react-test-renderer": "^18.2.0"
   }
 }
