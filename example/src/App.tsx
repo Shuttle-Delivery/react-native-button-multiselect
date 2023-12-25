@@ -19,9 +19,9 @@ import {
 } from './constants/Options';
 
 const buttonSelectedColors = {
-  backgroundColor: '#2196F3',
+  backgroundColor: '#FF9F0A',
   textColor: '#fff',
-  borderColor: '#1565C0',
+  borderColor: '#FF9500',
 };
 const buttonUnselectedColors = {
   backgroundColor: '#E0E0E0',
@@ -41,10 +41,6 @@ export default function App() {
   );
 
   const onSubmit = () => {
-    console.log('selectedGender', selectedGender);
-    console.log('selectedAgeRange', selectedAgeRange);
-    console.log('selectedInteresets', selectedInteresets);
-    console.log('selectedLanguages', selectedLanguages);
     const readableOutput = `Gender: ${selectedGender}\nAge Range: ${selectedAgeRange}\nInterests: ${selectedInteresets.join(
       ', '
     )}\nLanguages: ${selectedLanguages.join(', ')}`;
