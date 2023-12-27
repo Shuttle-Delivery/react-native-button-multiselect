@@ -15,7 +15,7 @@ a React Native component for easy integration of button-based multi-select funct
 </p>
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo.gif" alt="DEMO" width="336" height="600"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo.gif" alt="DEMO"/>
 </p>
 
 ## Table of Contents
