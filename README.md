@@ -15,7 +15,7 @@ a React Native component for easy integration of button-based multi-select funct
 </p>
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo.gif?raw=true" alt="DEMO" width="400" height="872"/>
+  <img src="https://i.imgur.com/1CHUXNG.gifv" alt="DEMO" width="380" height="826"/>
 </p>
 
 ## Table of Contents
@@ -127,14 +127,14 @@ export default App;
 
 ## Button Layout
 
-### FULL_WIDTH
+#### FULL_WIDTH
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif" alt="DEMO"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif?raw=true" alt="DEMO"/>
 </p>
 
 
-```ts
+```js
 <ButtonMultiselect
   buttons={[]}
   layout={ButtonLayout.FULL_WIDTH}
@@ -143,13 +143,13 @@ export default App;
 />
 ```
 
-### CAROUSEL
+#### CAROUSEL
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-carousel.gif" alt="DEMO"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-carousel.gif?raw=true" alt="DEMO"/>
 </p>
 
-```ts
+```js
 <ButtonMultiselect
   buttons={[]}
   layout={ButtonLayout.CAROUSEL}
@@ -157,13 +157,13 @@ export default App;
   selectedButtons={selectedOption}
 />
 ```
-### GRID
+#### GRID
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-grid.gif" alt="DEMO"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-grid.gif?raw=true" alt="DEMO"/>
 </p>
 
-```ts
+```js
 <ButtonMultiselect
   buttons={[]}
   layout={ButtonLayout.GRID}
@@ -174,13 +174,13 @@ export default App;
 
 ## Multiselect
 
-### Single-select mode (like radio)
+#### Single-select mode (like radio)
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif" alt="DEMO"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif?raw=true" alt="DEMO"/>
 </p>
 
-```ts
+```js
 <ButtonMultiselect
   buttons={[...]}
   layout={ButtonLayout.GRID}
@@ -190,13 +190,13 @@ export default App;
 ```
 
 
-### Multi-select (like checkbox)
+#### Multi-select (like checkbox)
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-multiselect.gif" alt="DEMO"/>
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-multiselect.gif?raw=true" alt="DEMO"/>
 </p>
 
-```ts
+```js
 <ButtonMultiselect
   buttons={[...]}
   multiselect
