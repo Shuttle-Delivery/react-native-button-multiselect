@@ -15,7 +15,7 @@ a React Native component for easy integration of button-based multi-select funct
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/1CHUXNG.gif" alt="DEMO"/>
+  <img src="https://i.imgur.com/7dqT3AX.gif" alt="DEMO"/>
 </p>
 
 ## Table of Contents
