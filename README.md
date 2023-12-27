@@ -15,10 +15,8 @@ a React Native component for easy integration of button-based multi-select funct
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/1CHUXNG.gif" alt="DEMO" width="380" height="826"/>
+  <img src="https://i.imgur.com/1CHUXNG.gif" alt="DEMO"/>
 </p>
-
-![react-native-button-multi-select](https://i.imgur.com/1CHUXNG.gif)
 
 ## Table of Contents
 
@@ -132,7 +130,7 @@ export default App;
 #### FULL_WIDTH
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif?raw=true" alt="DEMO"/>
+  <img src="https://i.imgur.com/BqegPXd.gif" alt="DEMO"/>
 </p>
 
 
@@ -148,7 +146,7 @@ export default App;
 #### CAROUSEL
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-carousel.gif?raw=true" alt="DEMO"/>
+  <img src="https://i.imgur.com/lOeLpmu.gif" alt="DEMO"/>
 </p>
 
 ```js
@@ -162,7 +160,7 @@ export default App;
 #### GRID
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-grid.gif?raw=true" alt="DEMO"/>
+  <img src="https://i.imgur.com/1CHUXNG.gif" alt="DEMO"/>
 </p>
 
 ```js
@@ -179,7 +177,7 @@ export default App;
 #### Single-select mode (like radio)
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif?raw=true" alt="DEMO"/>
+  <img src="https://i.imgur.com/BqegPXd.gif" alt="DEMO"/>
 </p>
 
 ```js
@@ -195,7 +193,7 @@ export default App;
 #### Multi-select (like checkbox)
 
 <p align="center">
-  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-multiselect.gif?raw=true" alt="DEMO"/>
+  <img src="https://i.imgur.com/Ixi7KdB.gif" alt="DEMO"/>
 </p>
 
 ```js
