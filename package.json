@@ -39,13 +39,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/abdymm/react-native-button-multiselect",
+  "repository": "https://github.com/Shuttle-Delivery/react-native-button-multiselect",
   "author": "“abdymm” <abdymalikmulky@gmail.com> (https://github.com/abdymm)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/abdymm/react-native-button-multiselect/issues"
+    "url": "https://github.com/Shuttle-Delivery/react-native-button-multiselect/issues"
   },
-  "homepage": "https://github.com/abdymm/react-native-button-multiselect#readme",
+  "homepage": "https://github.com/Shuttle-Delivery/react-native-button-multiselect#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
