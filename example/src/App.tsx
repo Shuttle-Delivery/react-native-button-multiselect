@@ -7,6 +7,8 @@ import {
   SafeAreaView,
   Button,
   ScrollView,
+  TouchableOpacity,
+  Linking,
 } from 'react-native';
 import ButtonMultiselect, {
   ButtonLayout,
@@ -18,15 +20,16 @@ import {
   INTEREST_OPTIONS,
 } from './constants/Options';
 
+const primaryColor = '#FF9500';
 const buttonSelectedColors = {
   backgroundColor: '#FF9F0A',
   textColor: '#fff',
-  borderColor: '#FF9500',
+  borderColor: primaryColor,
 };
 const buttonUnselectedColors = {
-  backgroundColor: '#E0E0E0',
+  backgroundColor: '#e8e8e8',
   textColor: '#333',
-  borderColor: '#BDBDBD',
+  borderColor: '#ccc',
 };
 
 export default function App() {
@@ -51,7 +54,20 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={styles.title}>FORM MULTISELECT</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>MULTISELECT FORM</Text>
+          <View style={styles.subTitleContainer}>
+            <Text>By </Text>
+            <TouchableOpacity
+              style={styles.subTitleButton}
+              onPress={() => {
+                Linking.openURL('https://www.shuttledelivery.co.kr/en');
+              }}
+            >
+              <Text style={styles.subTitleButtonText}>SHUTTLE</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
 
         {/* Single Select | Button Layout Full Width */}
         <View style={styles.section}>
@@ -88,7 +104,7 @@ export default function App() {
 
         {/* Multi Select | Button Layout GRID */}
         <View style={styles.section}>
-          <Text style={styles.label}>Your Intereset</Text>
+          <Text style={styles.label}>Your Intereset(s)</Text>
           <ButtonMultiselect
             buttons={INTEREST_OPTIONS}
             layout={ButtonLayout.GRID}
@@ -105,7 +121,7 @@ export default function App() {
         {/* Multi Select | Button Layout CAROUSEL */}
         <View style={styles.sectionWithoutPadding}>
           <Text style={[styles.label, styles.labelWithPadding]}>
-            Your Favorite Language
+            Your Favorite Language(s)
           </Text>
           <ButtonMultiselect
             buttons={FAV_LANGUAGE_OPTIONS}
@@ -121,7 +137,11 @@ export default function App() {
           />
         </View>
 
-        <Button title="Submit" onPress={onSubmit} color="#1565C0" />
+        <Button
+          title="SUBMIT"
+          onPress={onSubmit}
+          color={buttonSelectedColors.borderColor}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -135,8 +155,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 6,
   },
+  titleContainer: { marginBottom: 16 },
   section: {
     padding: 16,
   },
@@ -153,4 +174,16 @@ const styles = StyleSheet.create({
   },
   buttonMultiselect: {},
   buttonMultiselectTextStyle: {},
+  subTitleButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  subTitleButtonText: {
+    color: primaryColor,
+    fontWeight: 'bold',
+  },
+  subTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
 });

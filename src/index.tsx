@@ -2,11 +2,11 @@ import React, { useCallback, useState } from 'react';
 import {
   StyleSheet,
   View,
-  ViewStyle,
+  type ViewStyle,
   Text,
   TouchableOpacity,
-  LayoutChangeEvent,
-  TextStyle,
+  type LayoutChangeEvent,
+  type TextStyle,
   ScrollView,
 } from 'react-native';
 

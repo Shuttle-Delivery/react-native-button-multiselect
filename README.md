@@ -1,6 +1,24 @@
-# react-native-button-multiselect
+# React Native Button Multiselect
 
 a React Native component for easy integration of button-based multi-select functionality
+
+DEMO
+
+<p align="center" style="font-size: 1.2rem;">
+  <a href="https://npmjs.org/package/react-native-button-multiselect" title="View this project on npm">
+    <img src="http://img.shields.io/npm/v/react-native-button-multiselect.svg?style=flat-square" alt="npm version" />
+  </a>
+  <a href="https://npmjs.org/package/react-native-button-multiselect" title="View this project on npm">
+    <img src="http://img.shields.io/npm/dm/react-native-button-multiselect.svg?style=flat-square" alt="npm downloads" />
+  </a>
+  <a href="https://npmjs.org/package/react-native-button-multiselect" title="View this project on npm">
+    <img src="http://img.shields.io/npm/l/react-native-button-multiselect.svg?style=flat-square" alt="npm licence" />
+  </a>
+</p>
+
+## Table of Contents
+
+- 
 
 ## Installation
 
@@ -8,24 +26,55 @@ a React Native component for easy integration of button-based multi-select funct
 yarn add react-native-button-multiselect
 ```
 
-## Usage
+## Try it out
+
+try on expo
+
+## Basic Usage
 
 ```js
-import { multiply } from 'react-native-button-multiselect';
+import ButtonMultiselect, {
+  ButtonLayout,
+} from 'react-native-button-multiselect';
+
+// ...
+const GENDER_OPTIONS = [
+  {
+    label: 'MALE',
+    value: 'M',
+  },
+  {
+    label: 'FEMALE',
+    value: 'F',
+  },
+];
 
 // ...
 
-const result = await multiply(3, 7);
+const [selectedGender, setSelectedGender] = React.useState < string > '';
+
+// ...
+
+<ButtonMultiselect
+  buttons={GENDER_OPTIONS}
+  layout={ButtonLayout.FULL_WIDTH}
+  onButtonSelected={setSelectedGender}
+  selectedButtons={selectedGender || ''}
+/>;
 ```
 
-## Contributing
+Checkout Example folder, to run the project with this library
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+## Props
+
+//table
+
+## Demo (Layout and Multi props)
+
+demo with gif spesific, there will be 6 demo
 
 ## License
 
 MIT
 
 ---
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "example",
-    "slug": "example",
+    "name": "RN Button MultiSelect",
+    "slug": "rn-button multiselect",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

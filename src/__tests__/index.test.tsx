@@ -2,12 +2,10 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import ButtonMultiselect, { ButtonLayout } from '../index';
 
+const buttonOption1 = { label: 'Option 1', value: 'option1' };
+const buttonOption2 = { label: 'Option 2', value: 'option2' };
+const buttons = [buttonOption1, buttonOption2];
 describe('ButtonMultiselect', () => {
-  const buttons = [
-    { label: 'Option 1', value: 'option1' },
-    { label: 'Option 2', value: 'option2' },
-  ];
-
   it('renders buttons correctly', () => {
     const { getByText } = render(
       <ButtonMultiselect
@@ -36,11 +34,11 @@ describe('ButtonMultiselect', () => {
       />
     );
 
-    fireEvent.press(getByText(buttons[0].label));
-    expect(onButtonSelectedMock).toHaveBeenCalledWith(buttons[0].value);
+    fireEvent.press(getByText(buttonOption1.label));
+    expect(onButtonSelectedMock).toHaveBeenCalledWith(buttonOption1.value);
 
-    fireEvent.press(getByText(buttons[1].label));
-    expect(onButtonSelectedMock).toHaveBeenCalledWith(buttons[1].value);
+    fireEvent.press(getByText(buttonOption2.label));
+    expect(onButtonSelectedMock).toHaveBeenCalledWith(buttonOption2.value);
   });
 
   it('handles multiselect button clicks correctly', () => {
@@ -57,15 +55,15 @@ describe('ButtonMultiselect', () => {
     );
 
     // Click the first button
-    fireEvent.press(getByText(buttons[0].label));
+    fireEvent.press(getByText(buttonOption1.label));
     expect(onButtonSelectedMock).toHaveBeenCalledWith(
-      expect.arrayContaining([buttons[0].value])
+      expect.arrayContaining([buttonOption1.value])
     );
 
     // Click the second button
-    fireEvent.press(getByText(buttons[1].label));
+    fireEvent.press(getByText(buttonOption2.label));
     expect(onButtonSelectedMock).toHaveBeenCalledWith(
-      expect.arrayContaining([buttons[1].value])
+      expect.arrayContaining([buttonOption2.value])
     );
   });
 
@@ -77,13 +75,13 @@ describe('ButtonMultiselect', () => {
         layout={ButtonLayout.FULL_WIDTH}
         buttons={buttons}
         onButtonSelected={onButtonSelectedMock}
-        selectedButtons={[buttons[0].value]}
+        selectedButtons={[buttonOption1.value]}
         multiselect
       />
     );
 
     // Click the first button to deselect it
-    fireEvent.press(getByText(buttons[0].label));
+    fireEvent.press(getByText(buttonOption1.label));
     expect(onButtonSelectedMock).toHaveBeenCalledWith([]);
   });
 });
