@@ -65,7 +65,7 @@ const ButtonMultiselect = ({
   buttons,
   onButtonSelected,
   selectedButtons,
-  layout,
+  layout = LAYOUT.FULL_WIDTH,
   containerStyle,
   buttonStyle,
   textStyle,

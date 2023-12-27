@@ -2,8 +2,6 @@
 
 a React Native component for easy integration of button-based multi-select functionality
 
-DEMO
-
 <p align="center" style="font-size: 1.2rem;">
   <a href="https://npmjs.org/package/react-native-button-multiselect" title="View this project on npm">
     <img src="http://img.shields.io/npm/v/react-native-button-multiselect.svg?style=flat-square" alt="npm version" />
@@ -16,19 +14,40 @@ DEMO
   </a>
 </p>
 
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo.gif" alt="DEMO" width="336" height="600"/>
+</p>
+
 ## Table of Contents
 
-- 
+1. [Demo](#react-native-button-multiselect)
+1. [Installation](#installation)
+1. [Usage](#basic-usage)
+1. [Props](#props)
+1. [Button Layout](#button-layout)
 
 ## Installation
 
 ```sh
 yarn add react-native-button-multiselect
+# or
+npm install --save react-native-button-multiselect
 ```
 
 ## Try it out
 
-try on expo
+The example app is using Expo, if you want to try it, you can clone this repo, navigate to the `example` folder, and install all dependencies
+
+```sh
+cd example
+yarn install
+```
+
+Now, you can run the app with
+
+```sh
+yarn start
+```
 
 ## Basic Usage
 
@@ -38,40 +57,157 @@ import ButtonMultiselect, {
 } from 'react-native-button-multiselect';
 
 // ...
-const GENDER_OPTIONS = [
-  {
-    label: 'MALE',
-    value: 'M',
-  },
-  {
-    label: 'FEMALE',
-    value: 'F',
-  },
-];
 
-// ...
+const App = () => {
+  // Define your button options
+  const buttons = [
+    { label: 'Option 1', value: 'option1' },
+    { label: 'Option 2', value: 'option2' },
+  ];
 
-const [selectedGender, setSelectedGender] = React.useState < string > '';
+  // Set up state and handlers for selected buttons
+  const [selectedButtons, setSelectedButtons] = useState([]);
 
-// ...
+  const handleButtonSelected = (selectedValues) => {
+    setSelectedButtons(selectedValues);
+  };
 
-<ButtonMultiselect
-  buttons={GENDER_OPTIONS}
-  layout={ButtonLayout.FULL_WIDTH}
-  onButtonSelected={setSelectedGender}
-  selectedButtons={selectedGender || ''}
-/>;
+  return (
+    <ButtonMultiselect
+      layout={ButtonLayout.CAROUSEL} // Choose from ButtonLayout enum: CAROUSEL, FULL_WIDTH, GRID
+      buttons={buttons}
+      selectedButtons={selectedButtons}
+      onButtonSelected={handleButtonSelected}
+      // Additional props can be customized as needed
+    />
+  );
+};
+
+export default App;
 ```
-
-Checkout Example folder, to run the project with this library
 
 ## Props
 
-//table
+| Prop                | Type                            | Description                                                                                                                                         | Required |
+| ------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `layout`            | `ButtonLayout`                  | Specifies the layout type and styles for rendering buttons. Choose from `ButtonLayout.CAROUSEL`, `ButtonLayout.FULL_WIDTH`, or `ButtonLayout.GRID`. | Yes      |
+| `buttons`           | `ButtonProps[]`                 | An array of button options, each containing a `label` and a unique `value`. [more](#button-props)                                                   | Yes      |
+| `selectedButtons`   | `string \| string[]`            | The currently selected button(s). In multi-select mode, use an array; in single-select mode, use a string.                                          | Yes      |
+| `onButtonSelected`  | `Function`                      | Callback function invoked when a button is selected. Receives the selected value(s) as an argument.                                                 | Yes      |
+| `containerStyle`    | `ViewStyle \| Array<ViewStyle>` | Custom styles for the container wrapping the buttons.                                                                                               | No       |
+| `horizontalPadding` | `number`                        | Horizontal padding applied to the buttons.                                                                                                          | No       |
+| `buttonStyle`       | `ViewStyle \| Array<ViewStyle>` | Custom styles for the buttons.                                                                                                                      | No       |
+| `textStyle`         | `TextStyle \| Array<TextStyle>` | Custom styles for the button text.                                                                                                                  | No       |
+| `selectedColors`    | `ThemeColors`                   | Theme colors for selected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [more](#theme-colors)                               | No       |
+| `unselectedColors`  | `ThemeColors`                   | Theme colors for unselected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [more](#theme-colors)                             | No       |
+| `buttonMargin`      | `number`                        | Margin between buttons.                                                                                                                             | No       |
+| `multiselect`       | `boolean`                       | Optional prop to explicitly set multi-select mode. Default is `false` (single-select mode). [more](#mode)                                           | No       |
 
-## Demo (Layout and Multi props)
+### ButtonProps
 
-demo with gif spesific, there will be 6 demo
+| Prop    | Type     | Description                              |
+| ------- | -------- | ---------------------------------------- |
+| `label` | `string` | Label for the button.                    |
+| `value` | `string` | Unique value associated with the button. |
+
+### ThemeColors
+
+| Prop              | Type     | Description                     |
+| ----------------- | -------- | ------------------------------- |
+| `backgroundColor` | `string` | Background color of the button. |
+| `textColor`       | `string` | Text color of the button.       |
+| `borderColor`     | `string` | Border color of the button.     |
+
+### Conditional Props (multiselect)
+
+| Condition           | Props                                                                         | Description                                                                                                                                                  |
+| ------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `multiselect:true`  | `{ selectedButtons: string[]; onButtonSelected: (value: string[]) => void; }` | Conditional prop for multi-select mode. Requires `selectedButtons` as an array and `onButtonSelected` callback function that will return an array of string. |
+| `multiselect:false` | `{ selectedButtons: string; onButtonSelected: (value: string) => void; }`     | Conditional prop for single-select mode. Requires `selectedButtons` as a string and `onButtonSelected` callback function that will return a string.          |
+
+## Button Layout
+
+### FULL_WIDTH
+
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif" alt="DEMO"/>
+</p>
+
+
+```ts
+<ButtonMultiselect
+  buttons={[]}
+  layout={ButtonLayout.FULL_WIDTH}
+  onButtonSelected={setSelectedOption}
+  selectedButtons={selectedOption}
+/>
+```
+
+### CAROUSEL
+
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-carousel.gif" alt="DEMO"/>
+</p>
+
+```ts
+<ButtonMultiselect
+  buttons={[]}
+  layout={ButtonLayout.CAROUSEL}
+  onButtonSelected={setSelectedOption}
+  selectedButtons={selectedOption}
+/>
+```
+### GRID
+
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-grid.gif" alt="DEMO"/>
+</p>
+
+```ts
+<ButtonMultiselect
+  buttons={[]}
+  layout={ButtonLayout.GRID}
+  onButtonSelected={setSelectedOption}
+  selectedButtons={selectedOption}
+/>
+```
+
+## Multiselect
+
+### Single-select mode (like radio)
+
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-fullwidth.gif" alt="DEMO"/>
+</p>
+
+```ts
+<ButtonMultiselect
+  buttons={[...]}
+  layout={ButtonLayout.GRID}
+  onButtonSelected={setSelectedOption}
+  selectedButtons={selectedOption}
+/>
+```
+
+
+### Multi-select (like checkbox)
+
+<p align="center">
+  <img src="https://github.com/Shuttle-Delivery/react-native-button-multiselect/blob/main/demo/demo-multiselect.gif" alt="DEMO"/>
+</p>
+
+```ts
+<ButtonMultiselect
+  buttons={[...]}
+  multiselect
+  layout={ButtonLayout.CAROUSEL}
+  onButtonSelected={setSelectedOptions}
+  selectedButtons={selectedOptions}
+/>
+```
+
+
+
 
 ## License
 
