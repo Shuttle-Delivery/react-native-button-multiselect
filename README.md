@@ -15,7 +15,7 @@ a React Native component for easy integration of button-based multi-select funct
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/H1zVy5r.gif" alt="DEMO"/>
+  <img src="https://i.imgur.com/H1zVy5r.gif" alt="DEMO" width="380" height="826"/>
 </p>
 
 ## Table of Contents
@@ -133,7 +133,6 @@ export default App;
   <img src="https://i.imgur.com/BqegPXd.gif" alt="DEMO"/>
 </p>
 
-
 ```js
 <ButtonMultiselect
   buttons={[]}
@@ -157,6 +156,7 @@ export default App;
   selectedButtons={selectedOption}
 />
 ```
+
 #### GRID
 
 <p align="center">
@@ -189,7 +189,6 @@ export default App;
 />
 ```
 
-
 #### Multi-select (like checkbox)
 
 <p align="center">
@@ -205,9 +204,6 @@ export default App;
   selectedButtons={selectedOptions}
 />
 ```
-
-
-
 
 ## License
 
