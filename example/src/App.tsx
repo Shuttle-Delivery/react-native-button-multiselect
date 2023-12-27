@@ -48,7 +48,7 @@ export default function App() {
       ', '
     )}\nLanguages: ${selectedLanguages.join(', ')}`;
 
-    alert(readableOutput);
+    console.log(readableOutput);
   };
 
   return (
