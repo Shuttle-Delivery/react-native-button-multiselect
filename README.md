@@ -1,6 +1,6 @@
 # React Native Button Multiselect
 
-a React Native component for easy integration of button-based multi-select functionality
+React Native Button Multiselect is a versatile component designed for seamless integration of button-based multi-select functionality into React Native applications.
 
 <p align="center" style="font-size: 1.2rem;">
   <a href="https://npmjs.org/package/react-native-button-multiselect" title="View this project on npm">
@@ -28,6 +28,8 @@ a React Native component for easy integration of button-based multi-select funct
 
 ## Installation
 
+Install the package using Yarn or npm:
+
 ```sh
 yarn add react-native-button-multiselect
 # or
@@ -36,7 +38,11 @@ npm install --save react-native-button-multiselect
 
 ## Try it out
 
-The example app is using Expo, if you want to try it, you can clone this repo, navigate to the `example` folder, and install all dependencies
+To experiment with an example app using Expo:
+
+1. Clone this repository.
+2. Navigate to the example folder.
+3. Install dependencies:
 
 ```sh
 cd example
@@ -50,6 +56,8 @@ yarn start
 ```
 
 ## Basic Usage
+
+Implement the component in your app:
 
 ```js
 import ButtonMultiselect, {
@@ -88,42 +96,44 @@ export default App;
 
 ## Props
 
+Detailed descriptions of the available props:
+
 | Prop                | Type                            | Description                                                                                                                                         | Required |
 | ------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `layout`            | `ButtonLayout`                  | Specifies the layout type and styles for rendering buttons. Choose from `ButtonLayout.CAROUSEL`, `ButtonLayout.FULL_WIDTH`, or `ButtonLayout.GRID`. | Yes      |
-| `buttons`           | `ButtonProps[]`                 | An array of button options, each containing a `label` and a unique `value`. [more](#button-props)                                                   | Yes      |
-| `selectedButtons`   | `string \| string[]`            | The currently selected button(s). In multi-select mode, use an array; in single-select mode, use a string.                                          | Yes      |
-| `onButtonSelected`  | `Function`                      | Callback function invoked when a button is selected. Receives the selected value(s) as an argument.                                                 | Yes      |
+| `layout`            | `ButtonLayout`                  | Layout type for rendering buttons: `ButtonLayout.CAROUSEL`, `ButtonLayout.FULL_WIDTH`, or `ButtonLayout.GRID`.                                      | Yes      |
+| `buttons`           | `ButtonProps[]`                 | Array of button options, each with a `label` and unique `value`. [Details](#button-props)                                                           | Yes      |
+| `selectedButtons`   | `string \| string[]`            | Currently selected button(s). Use an array for multi-select mode, and a string for single-select mode.                                              | Yes      |
+| `onButtonSelected`  | `Function`                      | Callback function invoked when a button is selected. Receives the selected value(s).                                                                | Yes      |
 | `containerStyle`    | `ViewStyle \| Array<ViewStyle>` | Custom styles for the container wrapping the buttons.                                                                                               | No       |
-| `horizontalPadding` | `number`                        | Horizontal padding applied to the buttons.                                                                                                          | No       |
+| `horizontalPadding` | `number`                        | Horizontal padding for the buttons.                                                                                                                 | No       |
 | `buttonStyle`       | `ViewStyle \| Array<ViewStyle>` | Custom styles for the buttons.                                                                                                                      | No       |
 | `textStyle`         | `TextStyle \| Array<TextStyle>` | Custom styles for the button text.                                                                                                                  | No       |
-| `selectedColors`    | `ThemeColors`                   | Theme colors for selected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [more](#theme-colors)                               | No       |
-| `unselectedColors`  | `ThemeColors`                   | Theme colors for unselected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [more](#theme-colors)                             | No       |
+| `selectedColors`    | `ThemeColors`                   | Theme colors for selected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [Details](#theme-colors)                            | No       |
+| `unselectedColors`  | `ThemeColors`                   | Theme colors for unselected buttons, including `backgroundColor`, `textColor`, and `borderColor`. [Details](#theme-colors)                          | No       |
 | `buttonMargin`      | `number`                        | Margin between buttons.                                                                                                                             | No       |
-| `multiselect`       | `boolean`                       | Optional prop to explicitly set multi-select mode. Default is `false` (single-select mode). [more](#mode)                                           | No       |
+| `multiselect`       | `boolean`                       | Enable multi-select mode. Default is `false` (single-select). [Details](#mode)                                                                      | No       |
 
 ### ButtonProps
 
 | Prop    | Type     | Description                              |
 | ------- | -------- | ---------------------------------------- |
 | `label` | `string` | Label for the button.                    |
-| `value` | `string` | Unique value associated with the button. |
+| `value` | `string` | Unique value for the button.             |
 
 ### ThemeColors
 
 | Prop              | Type     | Description                     |
 | ----------------- | -------- | ------------------------------- |
-| `backgroundColor` | `string` | Background color of the button. |
-| `textColor`       | `string` | Text color of the button.       |
-| `borderColor`     | `string` | Border color of the button.     |
+| `backgroundColor` | `string` | Button's background.            |
+| `textColor`       | `string` | Button's text color.            |
+| `borderColor`     | `string` | Button's border.                |
 
 ### Conditional Props (multiselect)
 
 | Condition           | Props                                                                         | Description                                                                                                                                                  |
 | ------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `multiselect:true`  | `{ selectedButtons: string[]; onButtonSelected: (value: string[]) => void; }` | Conditional prop for multi-select mode. Requires `selectedButtons` as an array and `onButtonSelected` callback function that will return an array of string. |
-| `multiselect:false` | `{ selectedButtons: string; onButtonSelected: (value: string) => void; }`     | Conditional prop for single-select mode. Requires `selectedButtons` as a string and `onButtonSelected` callback function that will return a string.          |
+| `multiselect:true`  | `{ selectedButtons: string[]; onButtonSelected: (value: string[]) => void; }` | Conditional prop for multi-select mode. Requires `selectedButtons` as an array and the `onButtonSelected` callback function that will return an array of strings. |
+| `multiselect:false` | `{ selectedButtons: string; onButtonSelected: (value: string) => void; }`     | Conditional prop for single-select mode. Requires `selectedButtons` as a string and the `onButtonSelected` callback function that will return a string.          |
 
 ## Button Layout
 
@@ -207,6 +217,6 @@ export default App;
 
 ## License
 
-MIT
+This project is licensed under the MIT License. See the License tab for more details.
 
 ---
