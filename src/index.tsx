@@ -2,12 +2,12 @@ import React, { useCallback, useState } from 'react';
 import {
   StyleSheet,
   View,
-  type ViewStyle,
   Text,
   TouchableOpacity,
-  type LayoutChangeEvent,
-  type TextStyle,
+  LayoutChangeEvent,
+  TextStyle,
   ScrollView,
+  ViewStyle,
 } from 'react-native';
 
 const LAYOUT = {
