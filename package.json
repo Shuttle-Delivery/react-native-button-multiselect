@@ -1,6 +1,6 @@
 {
   "name": "react-native-button-multiselect",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a React Native component for easy integration of button-based multi-select functionality",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
