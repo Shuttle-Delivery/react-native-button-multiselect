@@ -20,8 +20,8 @@ React Native Button Multiselect is a versatile component designed for seamless i
 
 ## Table of Contents
 
-1. [Demo](#react-native-button-multiselect)
 1. [Installation](#installation)
+1. [Demo](#demo)
 1. [Usage](#basic-usage)
 1. [Props](#props)
 1. [Button Layout](#button-layout)
@@ -36,9 +36,11 @@ yarn add react-native-button-multiselect
 npm install --save react-native-button-multiselect
 ```
 
-## Try it out
+## Demo
 
-To experiment with an example app using Expo:
+You can see a live demo on this [Expo Snack](https://snack.expo.dev/@shuttlejosie/react-native-button-multiselect-example). 
+
+You can also experiment with the example app in the repo using Expo:
 
 1. Clone this repository.
 2. Navigate to the example folder.
